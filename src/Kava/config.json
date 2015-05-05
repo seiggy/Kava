@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Kava"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-Kava-d29a956f-38eb-41ef-a066-a3ae36b91ab7;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
