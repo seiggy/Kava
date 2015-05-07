@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Kava", "src\Kava\Kava.xproj", "{D16C3642-07A1-48D6-BC35-673B1ACA22C5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "KavaAPI", "src\KavaAPI\KavaAPI.xproj", "{59249B99-9E56-4866-9B04-997EF18392B5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B57FACE2-040F-40CC-9A38-5DB68A57F210}"
 EndProject
 Global
@@ -26,16 +24,11 @@ Global
 		{D16C3642-07A1-48D6-BC35-673B1ACA22C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16C3642-07A1-48D6-BC35-673B1ACA22C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16C3642-07A1-48D6-BC35-673B1ACA22C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59249B99-9E56-4866-9B04-997EF18392B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59249B99-9E56-4866-9B04-997EF18392B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59249B99-9E56-4866-9B04-997EF18392B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59249B99-9E56-4866-9B04-997EF18392B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D16C3642-07A1-48D6-BC35-673B1ACA22C5} = {6BE01D75-9915-46F2-9B9C-28C98848D49A}
-		{59249B99-9E56-4866-9B04-997EF18392B5} = {6BE01D75-9915-46F2-9B9C-28C98848D49A}
 	EndGlobalSection
 EndGlobal

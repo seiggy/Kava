@@ -8,9 +8,19 @@ using Kava.Models;
 namespace Kava.Migrations
 {
     [ContextType(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    partial class ForumData
     {
-        public override IModel Model
+        public override string Id
+        {
+            get { return "20150507025146_ForumData"; }
+        }
+        
+        public override string ProductVersion
+        {
+            get { return "7.0.0-beta4-12943"; }
+        }
+        
+        public override IModel Target
         {
             get
             {

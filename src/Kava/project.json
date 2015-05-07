@@ -26,7 +26,8 @@
     "Microsoft.Framework.Logging": "1.0.0-beta4",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta4",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta4",
-    "KavaAPI": "1.0.0-*"
+    "RestSharp": "105.1.0",
+    "nlog": "3.2.1"
   },
 
   "commands": {

@@ -8,9 +8,19 @@ using Kava.Models;
 namespace Kava.Migrations
 {
     [ContextType(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    partial class CharacterData
     {
-        public override IModel Model
+        public override string Id
+        {
+            get { return "20150507015249_CharacterData"; }
+        }
+        
+        public override string ProductVersion
+        {
+            get { return "7.0.0-beta4-12943"; }
+        }
+        
+        public override IModel Target
         {
             get
             {
@@ -59,60 +69,6 @@ namespace Kava.Migrations
                             .Annotation("OriginalValueIndex", 17);
                         b.Key("Id");
                         b.Annotation("Relational:TableName", "AspNetUsers");
-                    });
-                
-                builder.Entity("Kava.Models.Forum.ForumCategory", b =>
-                    {
-                        b.Property<string>("CategoryDescription")
-                            .Annotation("OriginalValueIndex", 0);
-                        b.Property<string>("CategoryName")
-                            .Annotation("OriginalValueIndex", 1);
-                        b.Property<Guid>("ForumCategoryID")
-                            .GenerateValueOnAdd()
-                            .Annotation("OriginalValueIndex", 2);
-                        b.Key("ForumCategoryID");
-                    });
-                
-                builder.Entity("Kava.Models.Forum.ForumPost", b =>
-                    {
-                        b.Property<Guid?>("ForumCategoryForumCategoryID")
-                            .Annotation("OriginalValueIndex", 0)
-                            .Annotation("ShadowIndex", 0);
-                        b.Property<Guid>("ForumPostID")
-                            .GenerateValueOnAdd()
-                            .Annotation("OriginalValueIndex", 1);
-                        b.Property<Guid?>("ForumTopicForumTopicID")
-                            .Annotation("OriginalValueIndex", 2)
-                            .Annotation("ShadowIndex", 1);
-                        b.Property<string>("PostContent")
-                            .Annotation("OriginalValueIndex", 3);
-                        b.Property<DateTimeOffset>("PostCreatedDateTime")
-                            .Annotation("OriginalValueIndex", 4);
-                        b.Property<DateTimeOffset>("PostUpdatedDateTime")
-                            .Annotation("OriginalValueIndex", 5);
-                        b.Property<string>("UserId")
-                            .Annotation("OriginalValueIndex", 6)
-                            .Annotation("ShadowIndex", 2);
-                        b.Key("ForumPostID");
-                    });
-                
-                builder.Entity("Kava.Models.Forum.ForumTopic", b =>
-                    {
-                        b.Property<Guid>("ForumTopicID")
-                            .GenerateValueOnAdd()
-                            .Annotation("OriginalValueIndex", 0);
-                        b.Property<DateTimeOffset>("LastPostDate")
-                            .Annotation("OriginalValueIndex", 1);
-                        b.Property<string>("OriginatingUserId")
-                            .Annotation("OriginalValueIndex", 2)
-                            .Annotation("ShadowIndex", 0);
-                        b.Property<DateTimeOffset>("TopicCreatedDate")
-                            .Annotation("OriginalValueIndex", 3);
-                        b.Property<bool>("TopicLocked")
-                            .Annotation("OriginalValueIndex", 4);
-                        b.Property<string>("TopicTitle")
-                            .Annotation("OriginalValueIndex", 5);
-                        b.Key("ForumTopicID");
                     });
                 
                 builder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
@@ -187,18 +143,6 @@ namespace Kava.Migrations
                             .Annotation("OriginalValueIndex", 1);
                         b.Key("UserId", "RoleId");
                         b.Annotation("Relational:TableName", "AspNetUserRoles");
-                    });
-                
-                builder.Entity("Kava.Models.Forum.ForumPost", b =>
-                    {
-                        b.ForeignKey("Kava.Models.Forum.ForumCategory", "ForumCategoryForumCategoryID");
-                        b.ForeignKey("Kava.Models.Forum.ForumTopic", "ForumTopicForumTopicID");
-                        b.ForeignKey("Kava.Models.ApplicationUser", "UserId");
-                    });
-                
-                builder.Entity("Kava.Models.Forum.ForumTopic", b =>
-                    {
-                        b.ForeignKey("Kava.Models.ApplicationUser", "OriginatingUserId");
                     });
                 
                 builder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]", b =>

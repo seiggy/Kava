@@ -7,18 +7,29 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Framework.OptionsModel;
+using Kava.Models.Forum;
+using Kava.Models.Blog;
 
 namespace Kava.Models
 {
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
+        public string Name { get; set; }
+        public string Server { get; set; }
+        public string CharacterName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         private static bool _created;
-
+        public DbSet<ForumCategory> ForumCategories { get; set; }
+        public DbSet<ForumTopic> ForumTopics { get; set; }
+        public DbSet<ForumPost> ForumPosts { get; set; }
+        public DbSet<BlogCategory> BlogCategories { get; set; }
+        public DbSet<BlogPost> BlogPosts { get; set; }
+        public DbSet<BlogTag> BlogTags { get; set; }
+        
         public ApplicationDbContext()
         {
             // Create the database and schema if it doesn't exist
