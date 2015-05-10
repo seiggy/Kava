@@ -3,3 +3,54 @@
 	background-color: #e67e22;
 	color: white;
 }
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  background-color: #e67e22;
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ecf0f1;
+    background-color: #d35400;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #d35400;
+    color: whitesmoke;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #d35400;
+    color: whitesmoke;
+}
+
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+}
+
+.navbar-default .navbar-nav > .open > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .open > .dropdown > a:focus .caret {
+    border-top-color: whitesmoke;
+    border-bottom-color: whitesmoke;
+}

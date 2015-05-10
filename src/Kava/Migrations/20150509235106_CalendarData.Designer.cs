@@ -8,9 +8,19 @@ using Kava.Models;
 namespace Kava.Migrations
 {
     [ContextType(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    partial class CalendarData
     {
-        public override IModel Model
+        public override string Id
+        {
+            get { return "20150509235106_CalendarData"; }
+        }
+        
+        public override string ProductVersion
+        {
+            get { return "7.0.0-beta4-12943"; }
+        }
+        
+        public override IModel Target
         {
             get
             {
