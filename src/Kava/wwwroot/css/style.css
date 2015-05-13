@@ -1,0 +1,28 @@
+﻿/*
+Theme Name: GameAddict
+Theme URI: http://www.skywarriorthemes.com/
+Author: Skywarrior themes
+Author URI: http://www.skywarriorthemes.com/
+Description: addict is the ultimate gaming theme. Created using the latest HTML5 and CSS3 techniques, it allows you to create awesome review sites or portfolios for your games.
+Version: 1.0
+License: Skywarrior Themes. All rights reserved.
+License URI: http://themeforest.net/user/Skywarrior
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: addict
+*/
+@import url('bootstrap.css');
+@import url('main.css');
+@import url('bootstrap-responsive.css');
+@import url('bbpress.css');
+@import url('woocommerce.css');
+@import url('clanwars.css');
+@import url('font-awesome.css');
+@import url('font-awesome.min.css');
+@import url('shadowbox.css');
+@import url('ui.totop.css');
+@import url('pb-view.css');
+@import url('calendar.css');
+header{
+	height: 86px;
+	background-color: #191919;
+}

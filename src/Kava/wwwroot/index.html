@@ -4,43 +4,272 @@
 		<meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sample Guild Site Template</title>
-		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
-		<link rel="stylesheet" href="css/demo.css" />
+	    <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/layerslider.css">
+        <link rel="stylesheet" id="custom-style-css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700italic,700,800,800italic" type="text/css" media="all" />
 	</head>
-	<body>
-		<div class="container">
-			<!-- Static navbar -->
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-				  <div class="navbar-header">
-				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				      <span class="sr-only">Toggle navigation</span>
-				      <span class="icon-bar"></span>
-				      <span class="icon-bar"></span>
-				      <span class="icon-bar"></span>
-				    </button>
-				    <a class="navbar-brand" href="#">Kava Guild Hosting</a>
-				  </div>
-				  <div id="navbar" class="navbar-collapse collapse">
-				    <ul class="nav navbar-nav">
-				        <li class="active"><a href="#">Home</a></li>
-				        <li><a href="#">Calendar</a></li>
-				        <li><a href="#">Forum</a></li>
-				        <li><a href="#">Blog</a></li>
-				    </ul>
-				    <ul class="nav navbar-nav navbar-right">
-				      <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-				      <li><a href="../navbar-static-top/">Static top</a></li>
-				      <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-				    </ul>
-				  </div><!--/.nav-collapse -->
-				</div><!--/.container-fluid -->
-			</nav>
-			<h1>Hello World!</h1>
-			<div class="col-md-4 carrot">
-				Test box model.
-			</div>
-		</div>
+	<body class="home page page-id-26 page-template page-template-tmp-no-title">
+	    <div id="main_wrapper">
+	        <div class="container logo">
+	            <!-- Logo Start -->
+	            <a class="brand" href="index.html">
+	                <img src="img/logo.png" alt="logo"/>
+	            </a>
+	            <!-- End Logo -->
+	            <div class="clear"></div>
+	        </div>
+	        <!-- NAVBAR -->
+	        <div class="navbar navbar-inverse container">
+	            <div class="navbar-inner">
+	                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <div class="nav-collapse collapse">
+	                    <div class="menu-main-container">
+	                        <ul class="nav">
+	                            <li class="current-menu-parent">
+	                                <a href="index.html">Home</a>
+	                            </li>
+	                            <li>
+	                                <a href="blog.html">Blog</a>
+	                            </li>
+	                            <li>
+	                                <a href="forum.html">Forum</a>
+	                            </li>
+	                            <li>
+	                                <a href="calendar.html">Calendar</a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <a href="#accountModal" role="button" data-toggle="modal" class="account">
+	                        <img src="./img/account.png"/>
+	                    </a>
+	                    <form method="GET" id="header-searchform" action="/Search">
+	                        <input autocomplete="off" value="" name="s" id="header-s" type="text"/>
+	                        <input id="header-searchsubmit" value="Search" type="submit"/>
+	                    </form>
+	                </div>
+	                <!-- /.nav-collapse -->
+	            </div>
+	            <!-- /.navbar-inner -->
+	        </div>
+	        <div id="accountModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+	                <h3>Login</h3>
+	            </div>
+	            <div class="modal-body">
+	                <div id="LoginWithAjax" class="default">
+	                    <span id="LoginWithAjax_Status"></span>
+	                    <form name="LoginWithAjax_Form" id="LoginWithAjax_Form" action="/Login" method="POST">
+	                        <table cellpadding="0" cellspacing="0" width="100%">
+	                            <tbody>
+	                            <tr id="LoginWithAjax_Username">
+	                                <td class="username_input">
+	                                    <input name="log" placeholder="Username" id="lwa_user_login" class="input" value="" type="text"/>
+	                                </td>
+	                            </tr>
+	                            <tr id="LoginWithAjax_Password">
+	                                <td class="password_input">
+	                                    <input name="pwd" placeholder="Password" id="lwa_user_pass" class="input" value="" type="password"/>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td colspan="2"></td>
+	                            </tr>
+	                            <tr id="LoginWithAjax_Submit">
+	                                <td id="LoginWithAjax_SubmitButton">
+	                                    <input name="rememberme" id="lwa_rememberme" value="forever" type="checkbox"/>
+	                                    <label>Remember Me</label>
+	                                    <a href="#" title="Password Lost and Found">Lost your Password?</a>
+	                                    <br/>
+	                                    <br/>
+	                                    <input class="button-small" value="Log In" type="submit"/>
+	                                    <a class="reg-btn button-small" href="#">Register</a>
+	                                    <input name="redirect_to" value="#" type="hidden"/>
+	                                    <input name="testcookie" value="1" type="hidden"/>
+	                                    <input name="lwa_profile_link" value="" type="hidden"/>
+	                                </td>
+	                            </tr>
+	                            </tbody>
+	                        </table>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="container boxed blog single-page container-wrap">
+	            <div class="row">
+	                <div class="span12">
+	                    <div class="">
+	                        <!-- latest blog posts -->
+	                        <div class="block span8 first cf">
+	                            <div class="title-wrapper">
+	                                <h3 class="widget-title">latest blog posts</h3>
+	                                <div class="clear"></div>
+	                            </div>
+	                            <div class="blog-post">
+	                                <div class="blog-image right">
+	                                    <div class="blog-date">
+	                                        <span class="date">May<br />1</span>
+	                                        <div class="plove">
+	                                            <a href="#" class="heart-love" id="heart-love-499" title="Love This">
+	                                                <span class="heart-love-count"><span class="icon-heart"></span>56</span>
+	                                            </a>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="blog-content" style="padding-left: 80px;">
+	                                    <h2><a href="entryurl.html">Post Title Goes here</a>
+	                                    </h2>
+	                                    <p>
+	                                        Post short description goes here [...]
+	                                    </p>
+	                                </div>
+	                                <div class="blog-info">
+	                                    <div class="post-pinfo">
+	                                        <span class="icon-user"></span><a href="posts-by-user.html?user=admin"> admin</a> &nbsp;
+	                                        <span class="icon-comment"></span>  <a data-original-title="3 comments" href="posturl.html#comments" data-toggle="tooltip">3 comments</a> &nbsp;
+	                                        <span class="icon-tags"></span>    <a href="/postsbytag?tag=Adventure"> Adventure, </a> <a href="/postsbytag?tag=RPG"> RPG, </a> <a href="/postsbytag?tag=Shooter"> Shooter, </a> <a href="/postsbytag?tag=Strategy"> Strategy, </a>
+	                                    </div>
+	                                    <!-- post-pinfo -->
+	                                    <a href="blog-post.html" class="button-small">Read More</a>
+	                                    <div class="clear"></div>
+	                                </div>
+	                                <!-- blog-info -->
+	                            </div>
+	                            <!-- blog-post -->
+	                            <div class="block-divider"></div>
+	                            <div class="blog-post">
+	                                <div class="blog-image right">
+	                                    <div class="blog-date">
+	                                        <span class="date">May<br />1</span>
+	                                        <div class="plove">
+	                                            <a href="#" class="heart-love" id="heart-love-499" title="Love This">
+	                                                <span class="heart-love-count"><span class="icon-heart"></span>56</span>
+	                                            </a>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="blog-content" style="padding-left: 80px;">
+	                                    <h2>
+	                                        <a href="entryurl.html">Post Title Goes here</a>
+	                                    </h2>
+	                                    <p>
+	                                        Post short description goes here [...]
+	                                    </p>
+	                                </div>
+	                                <div class="blog-info">
+	                                    <div class="post-pinfo">
+	                                        <span class="icon-user"></span><a> admin</a> &nbsp;
+	                                        <span class="icon-comment"></span>  <a data-original-title="3 comments" href="#" data-toggle="tooltip">3 comments</a> &nbsp;
+	                                        <span class="icon-tags"></span>    <a href="#"> Adventure, </a> <a href="#"> RPG, </a> <a href="#"> Shooter, </a> <a href="#"> Strategy, </a>
+	                                    </div>
+	                                    <!-- post-pinfo -->
+	                                    <a href="blog-post.html" class="button-small">Read More</a>
+	                                    <div class="clear"></div>
+	                                </div>
+	                                <!-- blog-info -->
+	                            </div>
+	                        </div>
+	                        <!-- end latest blog posts -->
+	                    </div>
+	                    <div class="span4">
+	                        <div class="first widget">
+	                            <form role="search" method="get" id="searchform" class="searchform" action="/search">
+	                                <div>
+	                                    <input value="" name="s" id="s" type="text"/>
+	                                    <input value="post" name="post_type" type="hidden"/>
+	                                </div>
+	                            </form>
+	                        </div>
+	                        <div class="widget">
+	                            <div class="title-wrapper">
+	                                <h3 class="widget-title"> Calendar of Events</h3>
+	                                <div class="clear"></div>
+	                            </div>
+	                            <div class="wcontainer">
+	                                <div id="calendar">
+	                                    <div class="c-title dark-gray-3level">
+	                                        <div class="left-button">&lsaquo;</div>
+	                                        <div class="right-button">&rsaquo;</div>
+	                                        <div class="title">February 2012</div>
+	                                    </div>
+
+	                                    <table class="c-days">
+	                                        <thead class="light-gray">
+	                                        <tr>
+	                                            <th>Sun</th>
+	                                            <th>Mon</th>
+	                                            <th>Tue</th>
+	                                            <th>Wed</th>
+	                                            <th>Thu</th>
+	                                            <th>Fri</th>
+	                                            <th>Sat</th>
+	                                        </tr>
+	                                        </thead>
+	                                        <tbody>
+	                                        <tr class="simple-lightgray">
+	                                            <td class="other-month"><span>29</span></td>
+	                                            <td class="other-month"><span>30</span></td>
+	                                            <td class="other-month"><span>31</span></td>
+	                                            <td class="mark"><span>1</span></td>
+	                                            <td><span>2</span></td>
+	                                            <td class="mark"><span>3</span></td>
+	                                            <td class="sunday"><span>4</span></td>
+	                                        </tr>
+	                                        <tr class="simple-lightgray">
+	                                            <td><span>5</span></td>
+	                                            <td><span>6</span></td>
+	                                            <td><span>7</span></td>
+	                                            <td><span>8</span></td>
+	                                            <td><span>9</span></td>
+	                                            <td><span>10</span></td>
+	                                            <td class="today sunday"><span>11</span></td>
+	                                        </tr>
+	                                        <tr class="simple-lightgray">
+	                                            <td><span>12</span></td>
+	                                            <td><span>13</span></td>
+	                                            <td class="mark-blue"><span>14</span></td>
+	                                            <td><span>15</span></td>
+	                                            <td><span>16</span></td>
+	                                            <td><span>17</span></td>
+	                                            <td class="sunday"><span>18</span></td>
+	                                        </tr>
+	                                        <tr class="simple-lightgray">
+	                                            <td><span>19</span></td>
+	                                            <td><span>20</span></td>
+	                                            <td><span>21</span></td>
+	                                            <td><span>22</span></td>
+	                                            <td><span>23</span></td>
+	                                            <td><span>24</span></td>
+	                                            <td class="sunday"><span>25</span></td>
+	                                        </tr>
+	                                        <tr class="simple-lightgray">
+	                                            <td><span>26</span></td>
+	                                            <td><span>27</span></td>
+	                                            <td><span>28</span></td>
+	                                            <td><span>29</span></td>
+	                                            <td class="other-month"><span>1</span></td>
+	                                            <td class="other-month"><span>2</span></td>
+	                                            <td class="other-month"><span>3</span></td>
+	                                        </tr>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+	                                <div class="legend">
+	                                    <span class="swatch-today"></span><span class="swatch-label"> - Current Day</span>
+	                                    <span class="swatch-blue"></span><span class="swatch-label"> - Coil Raids</span>
+	                                    <span class="swatch-green"></span><span class="swatch-label"> - Low Level Assist</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 		<script src="lib/jquery/jquery.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.js"></script>
 	</body>
