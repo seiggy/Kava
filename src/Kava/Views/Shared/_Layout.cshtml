@@ -1,80 +1,123 @@
-﻿@inject IOptions<AppSettings> AppSettings
+﻿@using Kava
+@inject IOptions<AppSettings> AppSettings
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewBag.Title - @AppSettings.Options.SiteTitle</title>
-
-        <environment names="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
-            <link rel="stylesheet" href="~/lib/bootstrap-touch-carousel/css/bootstrap-touch-carousel.css" />
-            <link rel="stylesheet" href="~/css/site.css" />
-        </environment>
-        <environment names="Staging,Production">
-            <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/css/bootstrap.min.css"
-                  asp-fallback-href="~/lib/bootstrap/css/bootstrap.min.css"
-                  asp-fallback-test-class="hidden" asp-fallback-test-property="visibility" asp-fallback-test-value="hidden" />
-            <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap-touch-carousel/0.8.0/css/bootstrap-touch-carousel.css"
-                  asp-fallback-href="~/lib/bootstrap-touch-carousel/css/bootstrap-touch-carousel.css"
-                  asp-fallback-test-class="carousel-caption" asp-fallback-test-property="display" asp-fallback-test-value="none" />
-            <link rel="stylesheet" href="~/css/site.css" />
-        </environment>
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">@AppSettings.Options.SiteTitle</a>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - @AppSettings.Options.SiteTitle</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/layerslider.css">
+        <link rel="stylesheet" id="custom-style-css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700italic,700,800,800italic" type="text/css" media="all"/>
+    </environment>
+</head>
+<body ng-app="app" class="home page page-id-26 page-template page-template-tmp-no-title">
+    <div id="main_wrapper">
+        <div class="container logo">
+            <!-- Logo Start -->
+            <a class="brand" href="index.html">
+                <img src="img/logo.png" alt="logo" />
+            </a>
+            <!-- End Logo -->
+            <div class="clear"></div>
+        </div>
+        <!-- NAVBAR -->
+        <div class="navbar navbar-inverse container">
+            <div class="navbar-inner">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                    <div class="menu-main-container">
+                        <ul class="nav">
+                            <li class="current-menu-parent">
+                                <a asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Blog">Blog</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Forum">Forum</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Calendar">Calendar</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Raid">Raid Teams</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="About">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#accountModal" role="button" data-toggle="modal" class="account">
+                        <img src="./img/account.png" />
+                    </a>
+                    <form method="GET" id="header-searchform" action="/Search">
+                        <input autocomplete="off" value="" name="s" id="header-s" type="text" />
+                        <input id="header-searchsubmit" value="Search" type="submit" />
+                    </form>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
+                <!-- /.nav-collapse -->
+            </div>
+            <!-- /.navbar-inner -->
+        </div>
+        <div id="accountModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>Login</h3>
+            </div>
+            <div class="modal-body">
+                <div id="LoginWithAjax" class="default">
+                    <span id="LoginWithAjax_Status"></span>
+                    <form name="LoginWithAjax_Form" id="LoginWithAjax_Form" action="/Login" method="POST">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr id="LoginWithAjax_Username">
+                                    <td class="username_input">
+                                        <input name="log" placeholder="Username" id="lwa_user_login" class="input" value="" type="text" />
+                                    </td>
+                                </tr>
+                                <tr id="LoginWithAjax_Password">
+                                    <td class="password_input">
+                                        <input name="pwd" placeholder="Password" id="lwa_user_pass" class="input" value="" type="password" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"></td>
+                                </tr>
+                                <tr id="LoginWithAjax_Submit">
+                                    <td id="LoginWithAjax_SubmitButton">
+                                        <input name="rememberme" id="lwa_rememberme" value="forever" type="checkbox" />
+                                        <label>Remember Me</label>
+                                        <a href="#" title="Password Lost and Found">Lost your Password?</a>
+                                        <br />
+                                        <br />
+                                        <input class="button-small" value="Log In" type="submit" />
+                                        <a class="reg-btn button-small" href="#">Register</a>
+                                        <input name="redirect_to" value="#" type="hidden" />
+                                        <input name="testcookie" value="1" type="hidden" />
+                                        <input name="lwa_profile_link" value="" type="hidden" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; 2015 - @AppSettings.Options.SiteTitle</p>
-            </footer>
+        <div class="container boxed blog single-page container-wrap">
+            <div class="row">
+                @RenderBody()
+            </div>
         </div>
-
-        <environment names="Development">
-            <script src="~/lib/jquery/jquery.js"></script>
-            <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-            <script src="~/lib/hammer.js/hammer.js"></script>
-            <script src="~/lib/bootstrap-touch-carousel/js/bootstrap-touch-carousel.js"></script>
-        </environment>
-        <environment names="Staging,Production">
-            <script src="//ajax.aspnetcdn.com/ajax/jquery/jquery-1.10.2.min.js"
-                    asp-fallback-src="~/lib/jquery/jquery.min.js"
-                    asp-fallback-test="window.jQuery">
-            </script>
-            <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/bootstrap.min.js"
-                    asp-fallback-src="~/lib/bootstrap/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery">
-            </script>
-            <script src="//ajax.aspnetcdn.com/ajax/hammer.js/2.0.4/hammer.min.js"
-                    asp-fallback-src="~/lib/hammer.js/hammer.js"
-                    asp-fallback-test="window.Hammer">
-            </script>
-            <script src="//ajax.aspnetcdn.com/ajax/bootstrap-touch-carousel/0.8.0/js/bootstrap-touch-carousel.js"
-                    asp-fallback-src="~/lib/bootstrap-touch-carousel/js/bootstrap-touch-carousel.js"
-                    asp-fallback-test="window.Zepto">
-            </script>
-        </environment>
-
-        @RenderSection("scripts", required: false)
-    </body>
+    </div>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/combined.min.js"></script>
+</body>
 </html>

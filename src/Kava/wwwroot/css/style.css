@@ -26,3 +26,8 @@ header{
 	height: 86px;
 	background-color: #191919;
 }
+
+.vent {
+    width: 100%;
+    height: 400px;
+}

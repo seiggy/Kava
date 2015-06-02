@@ -1,0 +1,32 @@
+﻿<div class="blog-post">
+    <div class="blog-image right">
+        <div class="blog-date">
+            <span class="date">{{post.month}}<br />{{post.day}}</span>
+            <div class="plove">
+                <a href="#" class="heart-love" id="heart-love-499" title="Love This">
+                    <span class="heart-love-count"><span class="icon-heart"></span>{{post.fav_count}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="blog-content" style="padding-left: 80px;">
+        <h2>
+            <a href="{{post.post_url}}">{{post.title}}</a>
+        </h2>
+        <p>
+            {{post.stinger}}
+        </p>
+    </div>
+    <div class="blog-info">
+        <div class="post-pinfo">
+            <span class="icon-user"></span><a href="posts-by-user.html?user={{post.username}}"> {{post.username}}</a> &nbsp;
+            <span class="icon-comment"></span>  <a data-original-title="{{post.comment_count}} comments" href="posturl.html#comments" data-toggle="tooltip">{{post.comment_count}} comments</a> &nbsp;
+            <span class="icon-tags"></span>    <a ng-repeat="tag in post.tags" href="/postsbytag?tag={{tag}}"> {{tag}} <span ng-show="! $last">-</span> </a>
+        </div>
+        <!-- post-pinfo -->
+        <a href="{{post.post_url}}" class="button-small">Read More</a>
+        <div class="clear"></div>
+    </div>
+    <!-- blog-info -->
+</div>
+<div class="block-divider" ng-show="! $last"></div>

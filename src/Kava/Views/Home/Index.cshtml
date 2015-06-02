@@ -2,251 +2,151 @@
     ViewBag.Title = "Home Page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/ASP-NET-Banners-01.png" alt="ASP.NET" class="img-responsive">
-            <div class="container">
-                <div class="carousel-caption">
-                    <p>
-                        Learn how to build ASP.NET apps that can run anywhere.
-                        <a class="btn btn-default btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
+<div class="span12">
+    <div class="">
+        <!-- latest blog posts -->
+        <div class="block span8 first cf" ng-controller="BlogRollController">
+            <div class="title-wrapper">
+                <h3 class="widget-title">latest blog posts</h3>
+                <div class="clear"></div>
+            </div>
+            <div ng-repeat="post in posts" ng-include="'Templates/blog_post.html'"></div>
+        </div>
+        <!-- end latest blog posts -->
+    </div>
+    <div class="span4">
+        <div class="first widget">
+            <form role="search" method="get" id="searchform" class="searchform" action="/search">
+                <div>
+                    <input value="" name="s" id="s" type="text" />
+                    <input value="post" name="post_type" type="hidden" />
+                </div>
+            </form>
+        </div>
+        <div class="widget">
+            <div class="title-wrapper">
+                <h3 class="widget-title"> Calendar of Events</h3>
+                <div class="clear"></div>
+            </div>
+            <div class="wcontainer">
+                <div id="calendar">
+                    <div class="c-title dark-gray-3level">
+                        <div class="left-button">&lsaquo;</div>
+                        <div class="right-button">&rsaquo;</div>
+                        <div class="title">February 2012</div>
+                    </div>
+
+                    <table class="c-days">
+                        <thead class="light-gray">
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="simple-lightgray">
+                                <td class="other-month"><span>29</span></td>
+                                <td class="other-month"><span>30</span></td>
+                                <td class="other-month"><span>31</span></td>
+                                <td class="mark"><span>1</span></td>
+                                <td><span>2</span></td>
+                                <td class="mark"><span>3</span></td>
+                                <td class="sunday"><span>4</span></td>
+                            </tr>
+                            <tr class="simple-lightgray">
+                                <td><span>5</span></td>
+                                <td><span>6</span></td>
+                                <td><span>7</span></td>
+                                <td><span>8</span></td>
+                                <td><span>9</span></td>
+                                <td><span>10</span></td>
+                                <td class="today sunday"><span>11</span></td>
+                            </tr>
+                            <tr class="simple-lightgray">
+                                <td><span>12</span></td>
+                                <td><span>13</span></td>
+                                <td class="mark-blue"><span>14</span></td>
+                                <td><span>15</span></td>
+                                <td><span>16</span></td>
+                                <td><span>17</span></td>
+                                <td class="sunday"><span>18</span></td>
+                            </tr>
+                            <tr class="simple-lightgray">
+                                <td><span>19</span></td>
+                                <td><span>20</span></td>
+                                <td><span>21</span></td>
+                                <td><span>22</span></td>
+                                <td><span>23</span></td>
+                                <td><span>24</span></td>
+                                <td class="sunday"><span>25</span></td>
+                            </tr>
+                            <tr class="simple-lightgray">
+                                <td><span>26</span></td>
+                                <td><span>27</span></td>
+                                <td><span>28</span></td>
+                                <td><span>29</span></td>
+                                <td class="other-month"><span>1</span></td>
+                                <td class="other-month"><span>2</span></td>
+                                <td class="other-month"><span>3</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="legend">
+                    <span class="swatch-today"></span><span class="swatch-label"> - Current Day</span>
+                    <span class="swatch-blue"></span><span class="swatch-label"> - Coil Raids</span>
+                    <span class="swatch-green"></span><span class="swatch-label"> - Low Level Assist</span>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <img src="~/images/Banner-02-VS.png" alt="Visual Studio" class="img-responsive">
-            <div class="container">
-                <div class="carousel-caption">
-                    <p>
-                        There are powerful new features in Visual Studio for building modern web apps.
-                        <a class="btn btn-default btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
+        <div class="widget">
+            <div class="title-wrapper">
+                <h3 class="widget-title"> Recent Forum Activity</h3>
+                <div class="clear"></div>
+            </div>
+            <div class="wcontainer">
+                <ul class="review">
+                    <li>
+                        <div class="info">
+                            <a href="#">Post title goes here</a>
+                            <br />
+                            <small>Last comment:<br /></small>
+                            <small>
+                                <i class="icon-calendar"></i> May 13th, 2015 - by
+                                <i class="icon-user"></i> UserName
+                            </small>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <a href="#">Post title goes here</a>
+                            <br />
+                            <small>
+                                <i class="icon-calendar"></i> May 13th, 2015 -
+                                <i class="icon-comment"></i> 5 Comments
+                            </small>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="item">
-            <img src="~/images/ASP-NET-Banners-02.png" alt="Package Management" class="img-responsive">
-            <div class="container">
-                <div class="carousel-caption">
-                    <p>
-                        Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                        <a class="btn btn-default btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
+        <div class="widget">
+            <div class="title-wrapper">
+                <h3 class="widget-title"> Ventrilo Status</h3>
+                <div class="clear"></div>
             </div>
-        </div>
-        <div class="item">
-            <img src="~/images/Banner-01-Azure.png" alt="Microsoft Azure" class="img-responsive">
-            <div class="container">
-                <div class="carousel-caption">
-                    <p>
-                        Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                        <a class="btn btn-default btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
+            <div class="wcontainer">
+                <div class="vent">
+                    <script type="text/javascript" src="//www.typefrag.com/Server-Status/script.aspx?id=5e75f0b5-645b-48bf-a0cc-f43865023d16"></script>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>This application consists of:</h2>
-        <ul>
-            <li>Sample pages showing basic nav</li>
-            <li>Theming using <a href="http://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <h2>Customize app</h2>
-        <ul>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398600">Add Controllers and Views</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398602">Add Data using EntityFramework</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398603">Add Authentication using Identity</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398606">Add real time support using SignalR</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398604">Add Class library</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517848">Add client packages using Bower</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517849">Manage client packages using Grunt</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517850">Develop on different platforms</a></li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <h2>Run & Deploy</h2>
-        <ul>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517851">Run your app locally</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517852">Run your app on ASP.NET Core 5</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517853">Run commands defined in your project.json</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Sites</a></li>
-        </ul>
-    </div>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script>
-    /*  --------------------------------------------------
- *  XIVPads.com (v5) - Lodestone API (Javascript)
- *  This runs off: XIVSync.com
- *
- *  > requires jquery.
- *  --------------------------------------------------
- *  API calls will match those of the PHP API, so for
- *  example, you can do:
- *
- *  LodestoneAPI.Search.Character(Name, Server);
- *  LodestoneAPI.Search.Character(123456);
- */
-    var LodestoneAPI =
-    {
-        logEnabled: false,
-
-        paths:
-        {
-            sync: 'http://xivsync.com',
-            search: '/search/character',
-            character: '/character/get',
-        },
-
-        // Initialize
-        init: function() {
-            LodestoneAPI.log('init()');
-
-            // check for jquery.
-            if (typeof window.jQuery == 'undefined') {
-                console.error('Please include https://jquery.com/, this API requires it.');
-            }
-        },
-
-        // wrapper for ajaxing
-        get: function(url, data, callback) {
-            LodestoneAPI.log('get', url);
-            LodestoneAPI.log('get', data);
-
-            $.ajax({
-                url: url,
-                data: data,
-                crossDomain: true,
-                dataType: 'json',
-                success: function(data) {
-                    LodestoneAPI.log('get > return', data);
-                    if (data.ok) {
-                        return callback(data.data);
-                    }
-
-                    console.error('XIVSync API Error: ' + data.msg);
-                    return callback(false);
-                },
-                error: function(data, status, error) {
-                    console.error('Error attempting to ajax to: ' + url);
-                    console.error(status);
-                    console.error(error);
-                    console.error('Please open an issue on Github: https://github.com/viion/XIVPads-LodestoneAPI');
-                    return callback(false);
-                },
-            })
-        },
-
-        // Logging
-        log: function(text, data) {
-            if (LodestoneAPI.logEnabled) {
-                if (data) {
-                    console.log('[LODESTONE-API]', text, data);
-                    return;
-                }
-
-                console.log('[LODESTONE-API]', text);
-            }
-        },
-
-        // Search for thingz
-        Search:
-        {
-            Character: function(nameOrId, server, callback, recurrsive) {
-                if (!callback || typeof callback !== 'function') {
-                    console.error('Callback function not defined.');
-                    return;
-                }
-
-                if (!nameOrId) {
-                    console.error('Name or ID is empty');
-                    return callback(false);
-                }
-
-                // if numeric, can just get character
-                // else we have to search!
-                if ($.isNumeric(nameOrId)) {
-                    LodestoneAPI.log('search > character > isNumeric = true =', nameOrId);
-
-                    var url = LodestoneAPI.paths.sync + LodestoneAPI.paths.character,
-                        data = { lodestone: nameOrId }
-
-                    LodestoneAPI.get(url, data, function(data) {
-                        // if empty
-                        if (data.length == 0) {
-                            return callback(false);
-                        }
-
-                        return callback(data);
-                    });
-                } else if (!recurrsive) {
-                    LodestoneAPI.log('search > character > isNumeric = false =', nameOrId);
-
-                    var url = LodestoneAPI.paths.sync + LodestoneAPI.paths.search,
-                        data = { name: nameOrId, server: server }
-
-                    // get
-                    LodestoneAPI.get(url, data, function(data) {
-                        // if empty
-                        if (data.length == 0) {
-                            return callback(false);
-                        }
-
-
-                        // Try match server and name
-                        for (var i in data) {
-                            var c = data[i];
-                            if (c.name == nameOrId && c.world == server && $.isNumeric(c.i));
-                            {
-                                // recurrsive callback on character using id
-                                LodestoneAPI.log('search > character > recurrsion with id:', c.id);
-                                LodestoneAPI.Search.Character(c.id, null, callback, true);
-                                return;
-                            }
-                        }
-
-                        LodestoneAPI.log('search > character > no results for: ', nameOrId);
-                        return callback(false);
-                    });
-                }
-            },
-        },
-    }
-    LodestoneAPI.init();
-</script>
-<script>
-    function TestApiCalls() {
-        TryApi('Astrid Proudfoot', 'Malboro');
-        TryApi('Wubster Wulf', 'Zodiark');
-    }
-    function TryApi(character, server) {
-        LodestoneAPI.Search.Character(character, server,
-            function(data) {
-                console.log('Result: ');
-                console.dir(data);
-            });
-    }
-</script>
