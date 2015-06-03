@@ -27,7 +27,9 @@ gulp.task("copy", ["clean"], function () {
     "jquery": "jquery/jquery*.{js,map}",
     "jquery-validation": "jquery-validation/jquery.validate.js",
     "jquery-validation-unobtrusive": "jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-    "angular": "angular/*.{js,css,map}"
+    "angular": "angular/*.{js,css,map}",
+    "moment": "moment/*.js",
+    "angular-bootstrap-calendar":"angular-bootstrap-calendar/dist/**/*.{js,css,map}"
   }
 
   for (var destinationDir in bower) {
@@ -37,7 +39,7 @@ gulp.task("copy", ["clean"], function () {
 });
 
 gulp.task("jsprep", ["copy"], function() {
-    gulp.src(['TypeScript/kvMenu.js', 'TypeScript/kvDashboard.js', 'TypeScript/kvFramework.js', 'TypeScript/appModule.js'])
+    gulp.src(['TypeScript/kvCalendarController.js', 'TypeScript/blogRollController.js', 'TypeScript/kvFramework.js', 'TypeScript/appModule.js'])
         .pipe(concat("combined.js"))
         .pipe(jshint())
         .pipe(uglify())
