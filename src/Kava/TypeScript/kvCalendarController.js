@@ -1,5 +1,6 @@
 /// <reference path="../../../typings/angularjs/angular.d.ts"/>
 "use strict";
+var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 angular.module("kvCalendar", []).controller("kvCalendarController", [
     "$scope",
     function ($scope) {
@@ -19,5 +20,6 @@ angular.module("kvCalendar", []).controller("kvCalendarController", [
         $scope.calendarView = "month";
         $scope.calendarDay = new Date();
         $scope.calendarTitle = "KoR Event Calendar";
+        $scope.calendarMonth = month[(new Date()).getMonth()];
     }
 ]);

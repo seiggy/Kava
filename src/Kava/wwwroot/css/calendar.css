@@ -34,7 +34,11 @@
 			text-align: center;
 			color: inherit;
 			padding: 12px 0 12px 0;
-            -webkit-transition: linear .3s;	        -moz-transition: linear .3s;	        -ms-transition: linear .3s;	        -o-transition: linear .3s;	        transition: linear .3s;
+            -webkit-transition: linear .3s;
+	        -moz-transition: linear .3s;
+	        -ms-transition: linear .3s;
+	        -o-transition: linear .3s;
+	        transition: linear .3s;
 		}
 		#calendar .c-title .title
 		{
@@ -54,19 +58,31 @@
 			text-align: center;
 			color: inherit;
 			padding: 12px 0 12px 0;
-            -webkit-transition: linear .3s;	        -moz-transition: linear .3s;	        -ms-transition: linear .3s;	        -o-transition: linear .3s;	        transition: linear .3s;
+            -webkit-transition: linear .3s;
+	        -moz-transition: linear .3s;
+	        -ms-transition: linear .3s;
+	        -o-transition: linear .3s;
+	        transition: linear .3s;
 		}
 
 			/* Mouse Events */
 			#calendar .left-button:hover, #calendar .right-button:hover
 			{
-                -webkit-transition: linear .3s;	            -moz-transition: linear .3s;	            -ms-transition: linear .3s;	            -o-transition: linear .3s;	            transition: linear .3s;
+                -webkit-transition: linear .3s;
+	            -moz-transition: linear .3s;
+	            -ms-transition: linear .3s;
+	            -o-transition: linear .3s;
+	            transition: linear .3s;
 				background: #1b7ea3;
 			    color: #fff;
 			}
 			#calendar .left-button:active, #calendar .right-button:active
 			{
-                -webkit-transition: linear .1s;	            -moz-transition: linear .1s;	            -ms-transition: linear .1s;	            -o-transition: linear .1s;	            transition: linear .3s;
+                -webkit-transition: linear .1s;
+	            -moz-transition: linear .1s;
+	            -ms-transition: linear .1s;
+	            -o-transition: linear .1s;
+	            transition: linear .3s;
 				background: #fff;
 			    color: #444;
 			}

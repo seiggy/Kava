@@ -2,6 +2,8 @@
 
 "use strict";
 
+var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
 angular.module("kvCalendar", [])
     .controller("kvCalendarController", [
         "$scope", $scope => {
@@ -22,5 +24,6 @@ angular.module("kvCalendar", [])
             $scope.calendarView = "month";
             $scope.calendarDay = new Date();
             $scope.calendarTitle = "KoR Event Calendar";
+            $scope.calendarMonth = month[(new Date()).getMonth()];
         }
     ]);
