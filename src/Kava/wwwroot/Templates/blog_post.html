@@ -20,7 +20,7 @@
     <div class="blog-info">
         <div class="post-pinfo">
             <span class="icon-user"></span><a href="posts-by-user.html?user={{post.username}}"> {{post.username}}</a> &nbsp;
-            <span class="icon-comment"></span>  <a data-original-title="{{post.comment_count}} comments" href="posturl.html#comments" data-toggle="tooltip">{{post.comment_count}} comments</a> &nbsp;
+            <span class="icon-comment"></span>  <a data-original-title="{{post.comment_count}} comments" href="{{post.post_url}}#comments" data-toggle="tooltip">{{post.comment_count}} comments</a> &nbsp;
             <span class="icon-tags"></span>    <a ng-repeat="tag in post.tags" href="/postsbytag?tag={{tag}}"> {{tag}} <span ng-show="! $last">-</span> </a>
         </div>
         <!-- post-pinfo -->
