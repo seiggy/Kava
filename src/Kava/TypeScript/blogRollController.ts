@@ -3,7 +3,7 @@
 "use strict";
 
 angular
-    .module("app.controllers")
+    .module("blogRoll", [])
     .controller("blogRollController", [
         "$scope", $scope => {
             $scope.posts = [

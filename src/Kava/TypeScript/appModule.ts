@@ -2,4 +2,4 @@
 
 "use strict";
 
-var app = angular.module("app", ["mwl.calendar", "app.controllers"]);
+var app = angular.module("app", ["mwl.calendar", "blogRoll", "kvCalendar"]);

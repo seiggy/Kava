@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/angularjs/angular.d.ts"/>
 "use strict";
-angular.module("app.controllers").controller("blogRollController", [
+angular.module("blogRoll", []).controller("blogRollController", [
     "$scope",
     function ($scope) {
         $scope.posts = [

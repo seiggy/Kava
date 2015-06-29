@@ -2,14 +2,14 @@
 
 "use strict";
 
-angular.module("app.controllers")
+angular.module("kvCalendar", [])
     .controller("kvCalendarController", [
         "$scope", $scope => {
             $scope.events = [
                 {
-                    cssClass: "static-raid",
-                    startsAt: new Date(2015, 6, 4, 18, 0, 0, 0),
-                    endsAt: new Date(2015, 6, 4, 20, 0, 0, 0),
+                    //cssClass: "static-raid",
+                    startsAt: new Date(2015, 6, 12, 18, 0, 0, 0),
+                    endsAt: new Date(2015, 6, 12, 20, 0, 0, 0),
                     editable: false,
                     deletable: false,
                     incrementBadgeTotal: true,
@@ -20,6 +20,7 @@ angular.module("app.controllers")
             ];
 
             $scope.calendarView = "month";
+            $scope.calendarDay = new Date();
             $scope.calendarTitle = "KoR Event Calendar";
         }
     ]);
